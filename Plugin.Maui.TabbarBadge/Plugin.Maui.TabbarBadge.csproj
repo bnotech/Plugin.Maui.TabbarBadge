@@ -10,8 +10,23 @@
         
         <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">15.0</SupportedOSPlatformVersion>
         <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">21.0</SupportedOSPlatformVersion>
+
+        <!-- NuGet configuration -->
+        <PackageId>Plugin.Maui.TabbarBadge</PackageId>
+        <Version>1.0</Version>
+        <Authors>Abhayprince, bnoffer</Authors>
+        <Owners>bnotech</Owners>
+        <Company>BNO Technology Solutions e.K.</Company>
+        <Description>A library to add Tabbar Badge to Shell Tabbar Items for Android and iOS using .NET MAUI.</Description>
+        <Copyright>©Copyright 2025, BNO Technology Solutions e.K.</Copyright>
+        <Tags>Tabbar Badge MAUI Shell iOS Android</Tags>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
     </PropertyGroup>
 
+    <ItemGroup>
+        <None Include="..\readme.md" Pack="true" PackagePath="\"/>
+    </ItemGroup>
+    
     <ItemGroup>
         <PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)"/>
     </ItemGroup>
