@@ -61,3 +61,4 @@ jobs:
           $version=$version.replace("refs/tags/v", "")
           $package="../package/Plugin.Maui.TabbarBadge." + $version + ".nupkg"
           dotnet nuget push $package --api-key ${{ secrets.GITHUB_TOKEN }} --source "github"
+          dotnet nuget push $package --api-key ${{ secrets.ORG_NUGET_ORG }} --source "nuget.org"
